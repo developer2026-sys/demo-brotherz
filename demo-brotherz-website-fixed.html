@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Brotherz | Demolition & Tear-Out Services</title>
+  <meta name="description" content="Demo Brotherz provides clean, fast demolition, interior tear-out, concrete removal, and site cleanup for residential and commercial projects." />
+  <style>
+    :root{
+      --black:#111111;
+      --charcoal:#1f1f1f;
+      --orange:#ff6a00;
+      --light:#f5f5f5;
+      --white:#ffffff;
+      --gray:#666666;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--black);
+      background:var(--white);
+      line-height:1.5;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{
+      width:min(1120px,92%);
+      margin:auto;
+    }
+    .topbar{
+      background:var(--black);
+      color:var(--white);
+      padding:12px 0;
+      font-size:14px;
+    }
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    header{
+      background:var(--white);
+      border-bottom:1px solid #e6e6e6;
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:78px;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.5px;
+      font-size:26px;
+    }
+    .brand-mark{
+      width:46px;
+      height:46px;
+      background:var(--orange);
+      color:var(--black);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      transform:skew(-8deg);
+      border:3px solid var(--black);
+    }
+    .brand span{
+      color:var(--orange);
+    }
+    .nav-links{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      font-weight:700;
+      font-size:14px;
+    }
+    .btn{
+      display:inline-block;
+      background:var(--orange);
+      color:var(--black);
+      padding:14px 22px;
+      border-radius:4px;
+      font-weight:900;
+      border:2px solid var(--orange);
+    }
+    .btn:hover{filter:brightness(.95)}
+    .btn-dark{
+      background:var(--black);
+      color:var(--white);
+      border-color:var(--black);
+    }
+    .hero{
+      background:linear-gradient(120deg,#111 0%,#222 65%,#2d2d2d 100%);
+      color:var(--white);
+      padding:92px 0 84px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:56px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-block;
+      color:var(--orange);
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      margin-bottom:14px;
+      font-size:13px;
+    }
+    h1{
+      font-size:clamp(42px,6vw,74px);
+      line-height:.98;
+      margin:0 0 22px;
+      letter-spacing:-2px;
+    }
+    h1 span{color:var(--orange)}
+    .hero p{
+      font-size:20px;
+      max-width:700px;
+      color:#dddddd;
+      margin:0 0 28px;
+    }
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .hero-card{
+      background:var(--white);
+      color:var(--black);
+      padding:30px;
+      border-radius:8px;
+      border-top:6px solid var(--orange);
+    }
+    .hero-card h3{
+      margin-top:0;
+      font-size:24px;
+    }
+    .hero-card ul{
+      padding-left:20px;
+      margin-bottom:0;
+    }
+    section{padding:78px 0}
+    .section-head{
+      max-width:760px;
+      margin-bottom:36px;
+    }
+    .section-head h2{
+      font-size:40px;
+      margin:0 0 12px;
+      line-height:1.1;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--gray);
+      font-size:18px;
+    }
+    .services{
+      background:var(--light);
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .card{
+      background:var(--white);
+      padding:28px;
+      border:1px solid #e3e3e3;
+      border-radius:6px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:21px;
+    }
+    .card p{
+      margin:0;
+      color:var(--gray);
+    }
+    .number{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--orange);
+      font-weight:900;
+      margin-bottom:18px;
+    }
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+    .checklist{
+      display:grid;
+      gap:14px;
+      margin:22px 0 0;
+    }
+    .check{
+      border-left:4px solid var(--orange);
+      padding:10px 0 10px 16px;
+      font-weight:700;
+    }
+    .cta{
+      background:var(--orange);
+      color:var(--black);
+    }
+    .cta-wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+    .cta h2{
+      font-size:40px;
+      margin:0 0 8px;
+    }
+    .cta p{
+      margin:0;
+      font-size:18px;
+    }
+    footer{
+      background:var(--black);
+      color:#cfcfcf;
+      padding:34px 0;
+      font-size:14px;
+    }
+    footer .container{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+    @media(max-width:850px){
+      .hero-grid,.split{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .nav-links a:not(.btn){display:none}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div>Residential + Commercial Demolition</div>
+      <div>Fast Quotes • Clean Worksites • Professional Crews</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#">
+          <div class="brand-mark">DB</div>
+          DEMO <span>BROTHERZ</span>
+        </a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Demo Brotherz</a>
+          <a href="#process">Process</a>
+          <a class="btn" href="#quote">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Demolition Done Right</div>
+          <h1>We Tear It Down.<br><span>You Build What’s Next.</span></h1>
+          <p>
+            Demo Brotherz handles demolition, interior tear-outs, concrete removal,
+            and jobsite cleanup for homeowners, contractors, property managers,
+            investors, and commercial clients.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#quote">Request a Free Quote</a>
+            <a class="btn btn-dark" href="tel:3179703904">Call 317.970.3904</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Need it gone?</h3>
+          <ul>
+            <li>Interior demolition</li>
+            <li>Kitchen and bathroom tear-outs</li>
+            <li>Flooring and drywall removal</li>
+            <li>Concrete and small structure removal</li>
+            <li>Commercial strip-outs</li>
+            <li>Debris haul-off and cleanup</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What We Do</div>
+          <h2>Demolition without the mess, confusion, or runaround.</h2>
+          <p>
+            One crew. One point of contact. Clear scope. Clean finish.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="number">1</div>
+            <h3>Interior Tear-Out</h3>
+            <p>Selective demolition for remodels, renovations, tenant improvements, and full interior resets.</p>
+          </div>
+          <div class="card">
+            <div class="number">2</div>
+            <h3>Residential Demolition</h3>
+            <p>Removal of sheds, garages, decks, kitchens, bathrooms, flooring, drywall, and other unwanted structures.</p>
+          </div>
+          <div class="card">
+            <div class="number">3</div>
+            <h3>Commercial Demo</h3>
+            <p>Efficient demolition and strip-out support for contractors, investors, property managers, and business owners.</p>
+          </div>
+          <div class="card">
+            <div class="number">4</div>
+            <h3>Concrete Removal</h3>
+            <p>Breakup and removal of patios, slabs, walkways, pads, and other concrete surfaces.</p>
+          </div>
+          <div class="card">
+            <div class="number">5</div>
+            <h3>Site Cleanup</h3>
+            <p>Debris removal and cleanup so the space is ready for the next phase of construction.</p>
+          </div>
+          <div class="card">
+            <div class="number">6</div>
+            <h3>Contractor Support</h3>
+            <p>A reliable demolition partner when your crew needs the tear-out completed before the build starts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Why Demo Brotherz</div>
+          <h2>Built for speed. Managed like professionals.</h2>
+          <p>
+            Demolition is the first step of the next project. Our job is to get
+            the old material out efficiently, protect the surrounding area,
+            communicate clearly, and leave the site ready for what comes next.
+          </p>
+        </div>
+        <div class="checklist">
+          <div class="check">Clear estimates before work begins</div>
+          <div class="check">Residential and commercial capability</div>
+          <div class="check">Flexible scheduling for contractors and property owners</div>
+          <div class="check">Debris removal and cleanup available</div>
+          <div class="check">Simple communication from quote through completion</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Simple Process</div>
+          <h2>Three steps. Then we get to work.</h2>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="number">1</div>
+            <h3>Send the Project</h3>
+            <p>Tell us what needs removed and send photos, measurements, or project details.</p>
+          </div>
+          <div class="card">
+            <div class="number">2</div>
+            <h3>Get the Quote</h3>
+            <p>We review the scope and provide a clear estimate for the demolition work.</p>
+          </div>
+          <div class="card">
+            <div class="number">3</div>
+            <h3>We Demo It</h3>
+            <p>Our crew completes the tear-out and leaves the site ready for the next phase.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="quote">
+      <div class="container cta-wrap">
+        <div>
+          <h2>Ready to clear the way?</h2>
+          <p>Send us your project and get a demolition quote.</p>
+        </div>
+        <div>
+          <a class="btn btn-dark" href="tel:3179703904">Call 317.970.3904</a>
+          <a class="btn btn-dark" href="tel:3179703904">Call 317.970.3904</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Demo Brotherz. All rights reserved.</div>
+      <div>Serving YOUR SERVICE AREA</div>
+    </div>
+  </footer>
+
+</body>
+</html>
